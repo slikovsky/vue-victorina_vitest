@@ -71,12 +71,24 @@ const questionText = computed(() => {
             <NextComponent v-if="isAnswered" @click="nextQuestion" />
           </div>
           <div class="answers">
-            <AnswerComponent v-for="(answer, index) in currentQuestion.answers" :key="index"
-              :image="`/src/assets/${answer.image}`" :index="index" :selected="selectedAnswer"
-              :correct="currentQuestion.correct" :isAnswered="isAnswered" @click="selectAnswer(index)" />
+            <AnswerComponent
+              v-for="(answer, index) in currentQuestion.answers"
+              :key="index"
+              :image="`/src/assets/${answer.image}`"
+              :index="index"
+              :selected="selectedAnswer"
+              :correct="currentQuestion.correct"
+              :isAnswered="isAnswered"
+              @click="selectAnswer(index)"
+            />
           </div>
         </template>
-        <ResultComponent v-else :score="correctAnswers" :total="questions.length" :results="data.requests" />
+        <ResultComponent
+          v-else
+          :score="correctAnswers"
+          :total="questions.length"
+          :results="data.requests"
+        />
       </div>
     </div>
   </div>
@@ -96,7 +108,13 @@ const questionText = computed(() => {
 
 .card {
   position: relative;
-  background: linear-gradient(241.84deg, #003DCE -3.61%, rgba(21, 170, 255) 48.73%, rgba(20, 164, 252) 48.74%, #003DCE 95.39%);
+  background: linear-gradient(
+    241.84deg,
+    #003dce -3.61%,
+    rgba(21, 170, 255) 48.73%,
+    rgba(20, 164, 252) 48.74%,
+    #003dce 95.39%
+  );
   border-radius: 51px;
   width: 700px;
   padding: 40px;
@@ -110,12 +128,12 @@ const questionText = computed(() => {
 }
 
 .card-wrapper::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   transform: translate(5px, 5px);
   border-radius: 51px;
-  background: linear-gradient(261.38deg, #0060D9 18.47%, #004193 93.48%);
+  background: linear-gradient(261.38deg, #0060d9 18.47%, #004193 93.48%);
 }
 
 .answers {

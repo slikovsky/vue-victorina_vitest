@@ -13,13 +13,11 @@ defineProps<{
     <div class="shadow"></div>
     <div class="image-wrapper" :class="{
       correct: isAnswered && index === correct,
-      wrong: isAnswered && index === selected && index !== correct
+      wrong: isAnswered && index === selected && index !== correct,
     }">
       <img :src="image" />
     </div>
-    <div v-if="isAnswered && index === correct" class="icon correct-icon">
-      ✓
-    </div>
+    <div v-if="isAnswered && index === correct" class="icon correct-icon">✓</div>
     <div v-if="isAnswered && index === selected && index !== correct" class="icon wrong-icon">
       ✕
     </div>
@@ -41,7 +39,7 @@ defineProps<{
   width: 140px;
   height: 180px;
   border-radius: 15px;
-  background: #004BAA;
+  background: #004baa;
   opacity: 0;
   transition: 0.3s;
 }
@@ -54,7 +52,7 @@ defineProps<{
 }
 
 .image-wrapper::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: -6px;
   border-radius: 19px;
@@ -94,12 +92,12 @@ defineProps<{
 }
 
 .image-wrapper.correct::before {
-  background: linear-gradient(135deg, #9AFF21, #66FF31);
+  background: linear-gradient(135deg, #9aff21, #66ff31);
   opacity: 1;
 }
 
 .image-wrapper.wrong::before {
-  background: linear-gradient(135deg, #FF0F8E, #FF549C);
+  background: linear-gradient(135deg, #ff0f8e, #ff549c);
   opacity: 1;
 }
 
@@ -113,14 +111,14 @@ defineProps<{
 }
 
 .correct-icon {
-  background: linear-gradient(135deg, #9AFF21, #66FF31);
+  background: linear-gradient(135deg, #9aff21, #66ff31);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .wrong-icon {
-  background: linear-gradient(135deg, #FF0F8E, #FF549C);
+  background: linear-gradient(135deg, #ff0f8e, #ff549c);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
