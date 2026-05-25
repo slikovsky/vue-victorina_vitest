@@ -11,10 +11,13 @@ defineProps<{
 <template>
   <div class="answer" :class="{ disabled: isAnswered }">
     <div class="shadow"></div>
-    <div class="image-wrapper" :class="{
-      correct: isAnswered && index === correct,
-      wrong: isAnswered && index === selected && index !== correct,
-    }">
+    <div
+      class="image-wrapper"
+      :class="{
+        correct: isAnswered && index === correct,
+        wrong: isAnswered && index === selected && index !== correct,
+      }"
+    >
       <img :src="image" />
     </div>
     <div v-if="isAnswered && index === correct" class="icon correct-icon">✓</div>
